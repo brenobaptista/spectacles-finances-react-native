@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   input: {
-    width: WIDTH - 117,
+    width: WIDTH - 120,
     marginBottom: 10,
     marginRight: 10,
     padding: 10,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   inputIcon: {
     backgroundColor: '#6A0088',
     marginBottom: 10,
-    marginLeft: 10,
+    marginLeft: 12,
     paddingTop: 12,
     paddingLeft: 12,
     paddingRight: 12,

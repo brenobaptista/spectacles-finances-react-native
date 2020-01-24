@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
     fontSize: 11,
     width: '80%',
     textAlign: 'justify',
-    textJustify: 'inter-word',
     marginTop: 10,
     paddingRight: 10,
   },

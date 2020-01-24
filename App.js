@@ -52,13 +52,13 @@ const LoginNavigator = createStackNavigator({
   Login: {
     screen: Login,
     navigationOptions: {
-      header: null,
+      headerShown: false,
     },
   },
   Home: {
     screen: myTabNavigator,
     navigationOptions: {
-      header: null,
+      headerShown: false,
     },
   },
   OpenNews: {

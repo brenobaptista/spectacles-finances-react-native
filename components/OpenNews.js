@@ -76,11 +76,9 @@ const styles = StyleSheet.create({
     marginRight: 20,
     fontWeight: 'bold', 
     textAlign: 'justify',
-    textJustify: 'inter-word',
   },
   description: {
     textAlign: 'justify',
-    textJustify: 'inter-word',
     color: '#383838',
     marginTop: 10,
     marginBottom: 10,
@@ -89,7 +87,6 @@ const styles = StyleSheet.create({
   },
   content: {
     textAlign: 'justify',
-    textJustify: 'inter-word',
     marginBottom: 10,
   },
   button: {
