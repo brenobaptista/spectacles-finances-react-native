@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import Expenses from './components/Expenses';
-import AddItem from './components/AddItem';
-import Login from './components/Login';
-import News from './components/News';
-import OpenNews from './components/OpenNews'
+import Expenses from './src/components/Expenses';
+import AddItem from './src/components/AddItem';
+import Login from './src/components/Login';
+import News from './src/components/News';
+import OpenNews from './src/components/OpenNews'
 
 const myTabNavigator = createBottomTabNavigator(
   {
