@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://fh-4xy.brenaoxline.spectacles-finances-react-native.exp.direct",
+  "packagerNgrokUrl": "https://packager.fh-4xy.brenaoxline.spectacles-finances-react-native.exp.direct",
+  "ngrokPid": 8163
 }
