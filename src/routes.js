@@ -8,7 +8,7 @@ import Expenses from "./components/Expenses";
 import AddItem from "./components/AddItem";
 import Login from "./components/Login";
 import News from "./components/News";
-import OpenNews from "./components/OpenNews";
+import WebNews from "./components/WebNews";
 
 const myTabNavigator = createBottomTabNavigator(
   {
@@ -61,8 +61,8 @@ const Routes = createStackNavigator({
       headerShown: false
     }
   },
-  OpenNews: {
-    screen: OpenNews
+  WebNews: {
+    screen: WebNews
   }
 });
 

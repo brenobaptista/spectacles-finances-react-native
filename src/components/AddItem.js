@@ -64,11 +64,8 @@ export default class AddItem extends Component {
 
   render() {
     return (
-      <TouchableWithoutFeedback
-        style={styles.container}
-        onPress={this.dismissKeyboard}
-      >
-        <View>
+      <TouchableWithoutFeedback onPress={this.dismissKeyboard}>
+        <View style={styles.container}>
           <Text style={styles.paragraph}>Expense Tracker</Text>
           <Card style={styles.card}>
             <TextInput
