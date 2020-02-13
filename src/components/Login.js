@@ -32,12 +32,12 @@ export default class Login extends Component {
           <IconComponent
             name={"user-alt"}
             size={13}
-            color={"white"}
+            color={"#000"}
             style={styles.inputIcon}
           />
           <TextInput
             placeholder="Your Email"
-            placeholderTextColor="#F1F1F1"
+            placeholderTextColor="#5A5A5A"
             onChangeText={email => this.setState({ email })}
             style={[styles.input, { flex: 1 }]}
             value={this.state.email}
@@ -50,12 +50,12 @@ export default class Login extends Component {
           <IconComponent
             name={"lock"}
             size={14}
-            color={"white"}
+            color={"#000"}
             style={styles.inputIcon}
           />
           <TextInput
             placeholder="Your Password"
-            placeholderTextColor="#F1F1F1"
+            placeholderTextColor="#5A5A5A"
             onChangeText={password => this.setState({ password })}
             style={[styles.input, { marginRight: 0 }]}
             secureTextEntry={!this.state.showPassword}
@@ -73,14 +73,14 @@ export default class Login extends Component {
               <IconComponent
                 name={"eye"}
                 size={14}
-                color={"white"}
+                color={"#000"}
                 style={[styles.inputIcon, { marginLeft: 0 }]}
               />
             ) : (
               <IconComponent
                 name={"eye-slash"}
                 size={14}
-                color={"white"}
+                color={"#000"}
                 style={[styles.inputIcon, { marginLeft: 0 }]}
               />
             )}
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     padding: 10,
     backgroundColor: "#E0C300",
-    color: "#fff",
+    color: "#000",
     height: 40
   },
   inputIcon: {
@@ -133,7 +133,15 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     marginTop: 10,
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10
   },
   logo: {
     width: 250,

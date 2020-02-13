@@ -50,7 +50,7 @@ export default class News extends Component {
                   })
                 }
               >
-                <View style={[styles.line, { backgroundColor: "white" }]}>
+                <View style={styles.line}>
                   <Image
                     source={{ uri: item.urlToImage }}
                     style={styles.image}
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1",
-    padding: 8
+    backgroundColor: "#FCDC00",
+    padding: 15
   },
   paragraph: {
     margin: 24,
@@ -82,22 +82,25 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   line: {
-    height: 90,
+    height: 100,
     flexDirection: "row",
-    borderBottomColor: "#ecf0f1",
-    borderBottomWidth: 10
+    borderColor: "#FCDC00",
+    borderTopWidth: 7,
+    borderBottomWidth: 7,
+    backgroundColor: "#fff",
+    borderRadius: 8
   },
   image: {
-    width: 65,
-    height: 65,
-    borderRadius: 10,
+    width: 70,
+    height: 70,
+    borderRadius: 6,
     marginRight: 10,
     marginLeft: 10,
     alignSelf: "center"
   },
   title: {
-    fontSize: 13,
-    width: "75%",
+    fontSize: 14,
+    width: "74%",
     textAlign: "justify",
     marginTop: 10,
     paddingRight: 10

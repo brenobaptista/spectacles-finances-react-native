@@ -18,10 +18,10 @@ const myTabNavigator = createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: "#34495e",
-      inactiveTintColor: "#bdc3c7",
+      activeTintColor: "#000",
+      inactiveTintColor: "#5A5A5A",
       style: {
-        backgroundColor: "#ecf0f1"
+        backgroundColor: "#E0C300"
       },
       showLabel: true
     },
@@ -62,7 +62,15 @@ const Routes = createStackNavigator({
     }
   },
   WebNews: {
-    screen: WebNews
+    screen: WebNews,
+    navigationOptions: {
+      title: "News",
+      headerBackTitleVisible: false,
+      headerStyle: {
+        backgroundColor: "#FCDC00"
+      },
+      headerTintColor: "#000"
+    }
   }
 });
 

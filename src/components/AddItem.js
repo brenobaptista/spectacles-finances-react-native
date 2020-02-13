@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { Card } from "react-native-paper";
 
 import { database } from "../config/firebase";
 
@@ -66,16 +65,18 @@ export default class AddItem extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.dismissKeyboard}>
         <View style={styles.container}>
-          <Text style={styles.paragraph}>Expense Tracker</Text>
-          <Card style={styles.card}>
+          <Text style={styles.paragraph}>Add New Item</Text>
+          <View style={styles.card}>
             <TextInput
               placeholder="What?"
+              placeholderTextColor="#5A5A5A"
               onChangeText={name => this.setState({ name })}
               style={styles.input}
               value={this.state.name}
             />
             <TextInput
               placeholder="How much?"
+              placeholderTextColor="#5A5A5A"
               onChangeText={value => this.setState({ value })}
               style={styles.input}
               value={this.state.value}
@@ -91,7 +92,7 @@ export default class AddItem extends Component {
                     style={styles.dateButton}
                     onPress={this.showMode}
                   >
-                    <Text style={styles.dateButtonText}>SELECT DATE</Text>
+                    <Text style={styles.buttonText}>SELECT DATE</Text>
                   </TouchableOpacity>
                 )}
               </View>
@@ -106,22 +107,22 @@ export default class AddItem extends Component {
                 />
               )}
             </View>
-          </Card>
-          <View style={{ flexDirection: "row" }}>
+          </View>
+          <View style={styles.inputView}>
             <View style={{ flex: 1 }}>
               <TouchableOpacity
                 style={[styles.button, { backgroundColor: "#DC3545" }]}
-                onPress={() => this.cancelItem()}
+                onPress={this.cancelItem}
               >
-                <Text style={{ color: "white" }}>Cancel</Text>
+                <Text style={styles.buttonText}>Cancel</Text>
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1 }}>
               <TouchableOpacity
                 style={[styles.button, { backgroundColor: "#28A745" }]}
-                onPress={() => this.pushItem()}
+                onPress={this.pushItem}
               >
-                <Text style={{ color: "white" }}>Confirm</Text>
+                <Text style={styles.buttonText}>Confirm</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -135,8 +136,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1",
-    padding: 8
+    backgroundColor: "#FCDC00",
+    padding: 15
   },
   paragraph: {
     margin: 24,
@@ -146,11 +147,22 @@ const styles = StyleSheet.create({
   },
   card: {
     marginTop: 30,
-    marginBottom: 25
+    marginBottom: 25,
+    backgroundColor: "#fff",
+    borderRadius: 3,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10
   },
   input: {
     margin: 10,
     backgroundColor: "#fff",
+    color: "black",
     padding: 10,
     borderRadius: 3
   },
@@ -162,10 +174,19 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 10,
     marginRight: 10,
-    borderRadius: 3
+    borderRadius: 3,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10
   },
   date: {
-    margin: 20
+    margin: 20,
+    color: "#000"
   },
   dateRow: {
     flexDirection: "row",
@@ -175,10 +196,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#0275d8",
     width: 120,
     justifyContent: "center",
-    borderRadius: 3
+    borderRadius: 3,
+    margin: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10
   },
-  dateButtonText: {
+  buttonText: {
     color: "white",
     textAlign: "center"
+  },
+  inputView: {
+    flexDirection: "row"
   }
 });

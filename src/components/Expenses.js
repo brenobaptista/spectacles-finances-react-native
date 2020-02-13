@@ -29,14 +29,14 @@ export default class Expenses extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>Expenses List</Text>
+        <Text style={styles.paragraph}>My Expenses</Text>
         {this.state.items.length > 0 ? (
           <SwipeListView
             data={this.state.items}
             renderItem={({ item }) => (
               <View style={styles.rowFront}>
                 <Text style={styles.itemLeft}>{item.name}</Text>
-                <Text style={styles.itemRight}>R$ {item.value}</Text>
+                <Text style={styles.itemRight}>$ {item.value}</Text>
               </View>
             )}
             renderHiddenItem={({ item }) => (
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#ecf0f1",
-    padding: 8
+    backgroundColor: "#FCDC00",
+    padding: 15
   },
   paragraph: {
     margin: 24,
@@ -80,9 +80,10 @@ const styles = StyleSheet.create({
   },
   rowFront: {
     padding: 5,
-    borderBottomWidth: 3,
-    borderColor: "#ecf0f1",
-    backgroundColor: "white",
+    borderTopWidth: 4,
+    borderBottomWidth: 4,
+    borderColor: "#FCDC00",
+    backgroundColor: "#fff",
     borderRadius: 5,
     flex: 1,
     flexDirection: "row"
@@ -90,16 +91,18 @@ const styles = StyleSheet.create({
   rowBack: {
     alignItems: "center",
     backgroundColor: "#DC3545",
-    borderBottomWidth: 3,
-    borderColor: "#ecf0f1",
+    borderTopWidth: 4,
+    borderBottomWidth: 4,
+    borderColor: "#FCDC00",
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     paddingLeft: 15,
-    borderRadius: 7
+    borderRadius: 5
   },
   textBack: {
     paddingRight: 15,
+    fontSize: 16,
     color: "white"
   },
   itemLeft: {
