@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -7,38 +7,39 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   Alert,
-  Keyboard
-} from "react-native";
-import Constants from "expo-constants";
-import DateTimePicker from "@react-native-community/datetimepicker";
+  Keyboard,
+  Platform,
+} from 'react-native';
+import Constants from 'expo-constants';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
-import { database } from "../config/firebase";
+import { database } from '../config/firebase';
 
 export default class AddItem extends Component {
   state = {
-    name: "",
-    value: "",
+    name: '',
+    value: '',
     date: new Date(),
-    show: Platform.OS === "ios" ? true : false
+    show: Platform.OS === 'ios',
   };
 
   pushItem = () => {
-    const newItem = database.ref("/items").push();
+    const newItem = database.ref('/items').push();
     newItem.set({
       id: newItem.key,
       name: this.state.name,
       value: this.state.value,
-      date: this.state.date
+      date: this.state.date,
     });
-    Alert.alert("Item saved successfully");
+    Alert.alert('Item saved successfully');
     this.cancelItem();
   };
 
   cancelItem = () => {
     this.setState({
-      name: "",
-      value: "",
-      date: new Date()
+      name: '',
+      value: '',
+      date: new Date(),
     });
   };
 
@@ -47,13 +48,13 @@ export default class AddItem extends Component {
 
     this.setState({
       date: currentDate,
-      show: Platform.OS === "ios" ? true : false
+      show: Platform.OS === 'ios',
     });
   };
 
   showMode = () => {
     this.setState({
-      show: true
+      show: true,
     });
   };
 
@@ -70,24 +71,24 @@ export default class AddItem extends Component {
             <TextInput
               placeholder="What?"
               placeholderTextColor="#5A5A5A"
-              onChangeText={name => this.setState({ name })}
+              onChangeText={(name) => this.setState({ name })}
               style={styles.input}
               value={this.state.name}
             />
             <TextInput
               placeholder="How much?"
               placeholderTextColor="#5A5A5A"
-              onChangeText={value => this.setState({ value })}
+              onChangeText={(value) => this.setState({ value })}
               style={styles.input}
               value={this.state.value}
-              keyboardType={"decimal-pad"}
+              keyboardType="decimal-pad"
             />
             <View>
               <View style={styles.dateRow}>
                 <Text style={styles.date}>
                   {this.state.date.toDateString()}
                 </Text>
-                {Platform.OS === "ios" ? null : (
+                {Platform.OS === 'ios' ? null : (
                   <TouchableOpacity
                     style={styles.dateButton}
                     onPress={this.showMode}
@@ -101,7 +102,7 @@ export default class AddItem extends Component {
                   testID="dateTimePicker"
                   timeZoneOffsetInMinutes={0}
                   value={this.state.date}
-                  mode={"date"}
+                  mode="date"
                   display="default"
                   onChange={this.onChange}
                 />
@@ -111,7 +112,7 @@ export default class AddItem extends Component {
           <View style={styles.inputView}>
             <View style={{ flex: 1 }}>
               <TouchableOpacity
-                style={[styles.button, { backgroundColor: "#DC3545" }]}
+                style={[styles.button, { backgroundColor: '#DC3545' }]}
                 onPress={this.cancelItem}
               >
                 <Text style={styles.buttonText}>Cancel</Text>
@@ -119,7 +120,7 @@ export default class AddItem extends Component {
             </View>
             <View style={{ flex: 1 }}>
               <TouchableOpacity
-                style={[styles.button, { backgroundColor: "#28A745" }]}
+                style={[styles.button, { backgroundColor: '#28A745' }]}
                 onPress={this.pushItem}
               >
                 <Text style={styles.buttonText}>Confirm</Text>
@@ -136,82 +137,82 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: "#FCDC00",
-    padding: 15
+    backgroundColor: '#FCDC00',
+    padding: 15,
   },
   paragraph: {
     margin: 24,
     fontSize: 30,
-    fontWeight: "bold",
-    textAlign: "center"
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   card: {
     marginTop: 30,
     marginBottom: 25,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
     borderRadius: 3,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 5
+      height: 5,
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
-    elevation: 10
+    elevation: 10,
   },
   input: {
     margin: 10,
-    backgroundColor: "#fff",
-    color: "black",
+    backgroundColor: '#fff',
+    color: 'black',
     padding: 10,
-    borderRadius: 3
+    borderRadius: 3,
   },
   button: {
-    alignItems: "center",
-    backgroundColor: "#3498db",
+    alignItems: 'center',
+    backgroundColor: '#3498db',
     paddingTop: 10,
     paddingBottom: 10,
     marginTop: 20,
     marginLeft: 10,
     marginRight: 10,
     borderRadius: 3,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 5
+      height: 5,
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
-    elevation: 10
+    elevation: 10,
   },
   date: {
     margin: 20,
-    color: "#000"
+    color: '#000',
   },
   dateRow: {
-    flexDirection: "row",
-    justifyContent: "space-between"
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   dateButton: {
-    backgroundColor: "#0275d8",
+    backgroundColor: '#0275d8',
     width: 120,
-    justifyContent: "center",
+    justifyContent: 'center',
     borderRadius: 3,
     margin: 10,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 5
+      height: 5,
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
-    elevation: 10
+    elevation: 10,
   },
   buttonText: {
-    color: "white",
-    textAlign: "center"
+    color: 'white',
+    textAlign: 'center',
   },
   inputView: {
-    flexDirection: "row"
-  }
+    flexDirection: 'row',
+  },
 });
